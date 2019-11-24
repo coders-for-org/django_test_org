@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+  <form method="POST" class="post-form" action="/lyrics-update/{{lyrics_upd.id}}">
+    {% csrf_token %}
+    <div class="container">
+      <br>
+      <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+          <h3>Update Details</h3>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lyrics Name:</label>
+        <div class="col-sm-4">
+          <input type="text" name="l_name" id="id_ename" required maxlength="100" value="{{ lyrics_upd.l_name }}" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lyrics Email:</label>
+        <div class="col-sm-4">
+          <input type="text" name="l_type" id="id_eemail" required maxlength="254" value="{{ lyrics_upd.l_type }}" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lyrics Contact:</label>
+        <div class="col-sm-4">
+          <input type="text" name="l_desc" id="id_econtact" required maxlength="15" value="{{ lyrics_upd.l_desc }}" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+          <button type="submit" class="btn btn-success">Update</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>

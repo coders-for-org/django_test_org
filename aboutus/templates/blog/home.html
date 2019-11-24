@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <h2>Home</h2>
+
+    {% for post in posts %}
+        <h4>Name: {{ post.name }}</h4>
+        <p>Age: {{ post.age}} having colour ({{post.color}})</p>
+        <hr>
+    {% endfor %}
+{% endblock content %}

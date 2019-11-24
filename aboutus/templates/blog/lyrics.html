@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+  <h2>Lyrics Create Form</h2>
+  <form method="POST" class="post-form" action="/lyrics/">
+    {% csrf_token %}
+    <div class="container">
+      <br>
+      <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+          <h3>Enter Details</h3>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lyrics Name:</label>
+        <div class="col-sm-4">
+          {{ form.l_name }}
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lyrics Type:</label>
+        <div class="col-sm-4">
+          {{ form.l_type }}
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lyrics Desc:</label>
+        <div class="col-sm-4">
+          {{ form.l_desc }}
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
