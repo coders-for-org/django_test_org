@@ -19,8 +19,8 @@ class Employee(models.Model):
     ename = models.CharField(max_length=100)  
     eemail = models.EmailField()  
     econtact = models.CharField(max_length=16)
-    created_at = models.DateTimeField(auto_now_add=False, null=True)
-    updated_at = models.DateTimeField(auto_now=False, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True)
     class Meta:  
         db_table = "employee"
 
